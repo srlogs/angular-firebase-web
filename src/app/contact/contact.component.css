@@ -1,0 +1,40 @@
+.contact .contact-info {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .contact .contact-info i {
+    font-size: 48px;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #4f92af;
+  }
+
+  @-webkit-keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .contact .contact-phone {
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+    .contact .contact-address, .contact .contact-phone, .contact .contact-email {
+      padding: 20px 0;
+    }
+  }
+  

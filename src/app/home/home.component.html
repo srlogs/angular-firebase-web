@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- Header -->
+<app-navbar></app-navbar>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      
+      <h1>Gagavox</h1>
+
+      <h2>This website is currently under construction</h2>
+      <h5>Hop on, if you'd like to join the early bird in waiting!</h5>
+      <div class="countdown" data-count="2020/12/3" data-template="%w weeks %d days <br> %H:%M:%S"></div>
+
+      <form (submit) = "addUserData()" [formGroup] = "userData">
+        <div class="row no-gutters">
+          <div class="col-md-6 form-group pr-md-1 form-group">
+            <input type="text" name="name" class="form-control"  formControlName = "name" [(ngModel)] ="username" id="name" placeholder="Your Name" required minlength="4"  />
+            <div class="validate">
+              <span class="sent-message" *ngIf = "userData.get('name').invalid && userData.get('name').dirty">Name must be at least 4 characters long.</span>
+            </div>
+          </div>
+          <div class="col-md-6 form-group pl-md-1 form-group">
+            <input [class.is-invalid] = "userData.get('email').invalid && userData.get('email').touched" type="email" class="form-control" name="email"  formControlName = "email"  [(ngModel)] = "emailid" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+            <div class="validate" >
+              <span class="sent-message" *ngIf = "userData.get('email').invalid && userData.get('email').dirty" >Enter valid Email</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <!-- <div class="loading">Loading</div>
+          <div class="error-message"></div> -->
+          <div class="sent-message" *ngIf = "userData.get('email').valid && message && userData.get('name').valid">Your notification request was sent. Thank you!</div>
+        </div>
+        <div class="text-center php-email-form" ><button type="submit">Get notified!</button></div>
+      </form>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Contact Us Section ======= -->
+    <section id="contact" class="contact" routerLink = "contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+        </div>
+        
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="icofont-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+          </div>
+
+        </div>
+    </section>
+
+  </main>
+ 
+</body>
+
+</html>
